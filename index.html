@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Codeforce Info</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/bootstrap/style.min.css" />
+    <script src="assets/chart.min.js"></script>
+    <link rel="stylesheet" href="assets/style.css" />
+</head>
+
+<body>
+    <div id="overlay">
+        <div class="cv-spinner">
+            <span class="spinner"></span>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Codeforce Account Info </h2>
+                    </div>
+                    <div class="card-body">
+                        <form onSubmit="return false;">
+                            <div class="mb-3 row">
+                                <div class="col-md-10">                                    
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" name="handle" id="handle" placeholder=""
+                                            autocomplete="off">                                            
+                                        <label for="handle">Enter Your CF Handle</label>
+                                    </div>
+                                </div>
+                                <div class="col-2 d-md-flex align-items-center">
+                                    <button type="button" id="submit"
+                                        class="btn btn-lg btn-primary">Submit</button>                                    
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+    <div class="d-block my-2 d-flex justify-content-center">
+        <button type="button" id="reset" class="btn btn-lg btn-danger d-none">Search Another</button>  
+    </div>
+    <div class="container no-date emp-profile d-none text-center">
+        <img src="assets/img/no_data.png" alt="" width="auto" class="d-none n_found">
+        <img src="assets/img/net_error.jpg" alt="" width="auto" class="d-none net_error">
+    </div>
+    <div class="container emp-profile d-none">
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="profile-img">
+                    <img src="" alt="" id="profile_img" />
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="profile-head">
+
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#" role="tab"
+                                aria-controls="home" aria-selected="true">About Me</a>
+                        </li>
+                    </ul>
+                    <div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Name</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p id="user_name"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Organization</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p id="user_org"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Country</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p id="user_country"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Max Rating</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p id="user_old_rank"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Total Friends</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p id="user_friend"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+
+                <table class="table table-borderless">
+                    <tbody>
+                        <tr class="">
+                            <td scope="row">Current Rating</td>
+                            <td id="cur_rate"></td>
+                        </tr>
+                        <tr class="">
+                            <td scope="row">Total Contest</td>
+                            <td id="total_contest"></td>
+                        </tr>
+                        <tr class="">
+                            <td scope="row">Last online</td>
+                            <td id="online"></td>
+                        </tr>
+                        <tr class="">
+                            <td scope="row">Registered</td>
+                            <td id="reg"></td>
+                        </tr>
+                        <tr class="">
+                            <td scope="row">Contribution</td>
+                            <td id="contribute"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+            <div class="col-md-8 m-auto profile-head mt-2">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#" role="tab"
+                            aria-controls="home" aria-selected="true">Rating Graph</a>
+                    </li>
+                </ul>
+                <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="assets/jQuery.min.js"></script>
+    <script src="assets/bootstrap/script.min.js"></script>
+    <script src="assets/bootstrap/popper.min.js"></script>
+    <script src="assets/script.js"></script>
+
+</body>
+
+</html>
