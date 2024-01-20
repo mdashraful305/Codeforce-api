@@ -16,8 +16,7 @@ $(document).ready(function () {
             type: "GET",
             url: url+handle,        
             success: function (res) {                              
-                if(res.status=="OK"){   
-                           console.log(res);          
+                if(res.status=="OK"){                                  
                     var data=res['result'][0]; 
                   
                     if(data.rating==undefined){
