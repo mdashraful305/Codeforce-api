@@ -85,7 +85,7 @@ $(document).ready(function () {
             } ,
             error:function (xhr, ajaxOptions, thrownError) {
                 if(xhr.status==0){
-                   netError("cout");
+                   netError("error");
                 }
                 
               }          
@@ -97,7 +97,7 @@ $(document).ready(function () {
             setTimeout(function(){
                 $("#overlay").fadeOut(300);
             },200);
-            netError("fail");           
+            netError("404");           
         });
     });
 
@@ -113,18 +113,22 @@ function init(){
     $("#reset").addClass('d-none'); 
     $(".emp-profile").addClass('d-none'); 
     $(".no-date").addClass('d-none'); 
-    $(".net_error").addClass('d-none'); 
+    $(".n_found").addClass('d-none'); 
+    $(".net_error_508").addClass('d-none'); 
+    $(".net_error_404").addClass('d-none'); 
 }
 
 function netError(net) {
-    if(net=="fail"){
-        $(".n_found").removeClass('d-none'); 
-    }else if(net=="cout"){        
-        $(".net_error").removeClass('d-none'); 
-    }else{
-        $(".n_found").removeClass('d-none'); 
-    }
+    
     $("#reset").removeClass('d-none');       
     $(".no-date").removeClass('d-none'); 
+    
+    if(net=="508"){
+        $(".net_error_508").removeClass('d-none'); 
+    }else if(net=="other"){
+        $(".n_found").removeClass('d-none'); 
+    }else if(net=="404"){
+        $(".net_error_404").removeClass('d-none');
+    }
 
 }
